@@ -15,6 +15,7 @@ void address()
 void margenes(char flag[], char title[]);
 int abs(int n);
 int factorial(int x);
+int rec_factorial(int x);
 
 int main()
 {
@@ -48,6 +49,13 @@ int main()
     printf("\nEl Factorial de %d es = %d", z, fact);
     margenes("fin", "factorial");
     
+    margenes("header", "rec_factorial");
+    int zrec, recfact;
+    printf("\nIngresa cualquier numero entero "); scanf("%d", &zrec);
+    recfact = rec_factorial(zrec);
+    printf("\nEl Factorial de %d es = %d", zrec, recfact);
+    margenes("fin", "rec_factorial");
+    
     return 0;
 }
 
@@ -80,6 +88,21 @@ int factorial(int x)
         f = f*i;
     }
     return f;
+}
+
+// Funcion que tambien calcula el numero factorial de un numero pero de manera recursiva
+int rec_factorial(int x)
+{
+    int f;
+    if(x>1){
+        f = x * rec_factorial(x-1);
+    }
+    if(x==1){
+        f=1;
+    }
+    else {
+        return f;
+    }
 }
 
 
